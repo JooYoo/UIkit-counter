@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,31 +18,52 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="bV8-hh-8Az">
-                                <rect key="frame" x="0.0" y="376" width="414" height="144"/>
+                                <rect key="frame" x="0.0" y="360.5" width="414" height="175"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="usd-s4-1Iu">
-                                        <rect key="frame" x="171.5" y="0.0" width="71" height="47"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                        <nil key="textColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="usd-s4-1Iu">
+                                        <rect key="frame" x="192" y="0.0" width="30" height="62.5"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="0">
+                                                <attributes>
+                                                    <font key="NSFont" size="48" name="Futura-Medium"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="nrU-ez-3XI">
-                                        <rect key="frame" x="72.5" y="97" width="269" height="47"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="nrU-ez-3XI">
+                                        <rect key="frame" x="98" y="112.5" width="218.5" height="62.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cPa-SW-hPk">
-                                                <rect key="frame" x="0.0" y="0.0" width="83" height="47"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="Button" buttonSize="large"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="59.5" height="62.5"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="" buttonSize="large">
+                                                    <imageReference key="image" image="minus" catalog="system" symbolScale="large"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="decreaseClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nuT-f1-AMC"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fmx-Vt-8jT">
-                                                <rect key="frame" x="93" y="0.0" width="83" height="47"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="Button" buttonSize="large"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fmx-Vt-8jT">
+                                                <rect key="frame" x="79.5" y="0.0" width="59.5" height="62.5"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="" buttonSize="large">
+                                                    <imageReference key="image" image="arrow.counterclockwise" catalog="system" symbolScale="large"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="default"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="resetClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e0A-zF-TEL"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TwC-4i-3Ag">
-                                                <rect key="frame" x="186" y="0.0" width="83" height="47"/>
+                                                <rect key="frame" x="159" y="0.0" width="59.5" height="62.5"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="Button" buttonSize="large"/>
+                                                <buttonConfiguration key="configuration" style="filled" buttonSize="large">
+                                                    <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
+                                                    <attributedString key="attributedTitle"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="increaseClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="utt-Sx-RsF"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -57,6 +79,9 @@
                             <constraint firstItem="bV8-hh-8Az" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="j3R-Gu-AS1"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="countLabel" destination="usd-s4-1Iu" id="26z-MO-c7p"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -64,6 +89,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.counterclockwise" catalog="system" width="115" height="128"/>
+        <image name="minus" catalog="system" width="128" height="24"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
